@@ -36,7 +36,7 @@ client.on('message', (message) => {
     return message.reply('pong');
   }
 
-  if(message.content == '봇정보') {
+  if(message.content == 'bot') {
     let commandList = [
       {name: '봇 이름', desc: '똥AH의 봇'},
       {name: '봇 개발자', desc: '박동아 | Dongah Park'},
@@ -47,9 +47,9 @@ client.on('message', (message) => {
       commandStr += `• \`\`${changeCommandStringLength(`${x.name}`)}\`\` : **${x.desc}**\n`;
     });
 
-    봇정보.addField('Commands: ', commandStr);
+    bot.addField('Commands: ', commandStr);
 
-    message.channel.send(봇정보)
+    message.channel.send(bot)
   }
 
   if(message.content.startsWith('!전체공지')) {

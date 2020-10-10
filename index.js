@@ -37,12 +37,22 @@ client.on('message', (message) => {
   }
 
   if(message.content == 'bot') {
+    let helpImg = 'https://images-ext-1.discordapp.net/external/RyofVqSAVAi0H9-1yK6M8NGy2grU5TWZkLadG-rwqk0/https/i.imgur.com/EZRAPxR.png';
+    let embed = new Discord.RichEmbed()
     let commandList = [
-      {name: '봇 이름', desc: '똥AH의 봇'},
-      {name: '봇 개발자', desc: '박동아 | Dongah Park'},
-      {name: '봇 버전', desc: '1.0 2020 Ver'},
-      {name: '봇 최신 업데이트', desc: '2020-10-10'},
+      {name: 'ping', desc: '현재 핑 상태'},
+      {name: 'embed', desc: 'embed 예제1'},
+      {name: 'embed2', desc: 'embed 예제2 (help)'},
+      {name: '!전체공지', desc: 'dm으로 전체 공지 보내기'},
+      {name: '!청소', desc: '텍스트 지움'},
     ];
+    let commandStr = '';
+    let embed = new Discord.RichEmbed()
+      .setAuthor('Help of 콜라곰 BOT', helpImg)
+      .setColor('#186de6')
+      .setFooter(`콜라곰 BOT ❤️`)
+      .setTimestamp()
+    
     commandList.forEach(x => {
       commandStr += `• \`\`${changeCommandStringLength(`${x.name}`)}\`\` : **${x.desc}**\n`;
     });

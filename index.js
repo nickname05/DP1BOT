@@ -33,10 +33,10 @@ client.on('message', (message) => {
   if(message.author.bot) return;
 
   if(message.content == '!봇정보') {
-    return message.reply('봇 이름: 똥AH의봇');
-    return message.reply('봇 개발자: 박동아');
-    return message.reply('봇 버전: 1.0 | 2020 ver');
-    return message.reply('봇 최신 업데이트 날짜: 2020년-10월-10일');
+    return message.reply('봇 이름: 똥AH의봇'
+    '봇 개발자: 박동아'
+    '봇 버전: 1.0 | 2020 ver'
+    '봇 최신 업데이트 날짜: 2020년-10월-10일');
   }
 
   if(message.content.startsWith('!전체공지')) {

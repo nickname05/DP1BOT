@@ -32,11 +32,24 @@ client.on("guildMemberRemove", (member) => {
 client.on('message', (message) => {
   if(message.author.bot) return;
 
+  if(message.content == 'ping') {
+    return message.reply('pong');
+  }
+
   if(message.content == '!봇정보') {
-    return message.reply('봇 이름: 똥AH의봇'
-    '봇 개발자: 박동아'
-    '봇 버전: 1.0 | 2020 ver'
-    '봇 최신 업데이트 날짜: 2020년-10월-10일');
+    let commandList = [
+      {name: '봇 이름', desc: '똥AH의 봇'},
+      {name: '봇 개발자', desc: '박동아 | Dongah Park'},
+      {name: '봇 버전', desc: '1.0 2020 Ver'},
+      {name: '봇 최신 업데이트', desc: '2020-10-10'},
+    ];
+    commandList.forEach(x => {
+      commandStr += `• \`\`${changeCommandStringLength(`${x.name}`)}\`\` : **${x.desc}**\n`;
+    });
+
+    봇정보.addField('Commands: ', commandStr);
+
+    message.channel.send(봇정보)
   }
 
   if(message.content.startsWith('!전체공지')) {

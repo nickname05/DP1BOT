@@ -36,6 +36,18 @@ client.on('message', (message) => {
     return message.reply('pong');
   }
 
+  if(message.content == '심심해') {
+    return message.reply('어쩌라구연 ~');
+  }
+
+  if(message.content == 'ㅇㄹㄹ') {
+    return message.reply('요롱롱 ~');
+  }
+
+  if(message.content == 'ㅇㄱㄴㅇ') {
+    return message.reply('이게 나야!');
+  }
+
   if(message.content.startsWith('!전체공지')) {
     if(checkPermission(message)) return
     if(message.member != null) { // 채널에서 공지 쓸 때
